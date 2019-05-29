@@ -5,7 +5,7 @@ This repo holds configuration files that can be used in other KBase search codeb
 * ES type mappings for each index
 * Mapping of KBase Workspace type names to index names in ES.
 
-## Validate syntax
+## Validation
 
 Run `python validate.py` to validate the yaml syntax in the config file.
 
