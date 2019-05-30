@@ -1,22 +1,4 @@
 
-# Generic, global type mappings. These apply to all workspace objects, but not subobjects.
-global_ws_mappings:
-  timestamp: {type: date}
-  obj_name: {type: keyword}
-  guid: {type: keyword}
-  creation_date: {type: date}
-  shared_users: {type: keyword}
-  access_group: {type: integer}
-  creator: {type: keyword}
-  version: {type: integer}
-  obj_id: {type: integer}
-  is_public: {type: boolean}
-  copied: {type: keyword}
-  tags: {type: keyword}
-  obj_type_version: {type: keyword}
-  obj_type_module: {type: keyword}
-  obj_type_name: {type: keyword}
-
 # Mapping of KBase type names to index names
 ws_type_to_indexes:
   Narrative: "narrative"
@@ -33,6 +15,25 @@ ws_subobjects:
   - "genome_features:1"
   - "pangenome_orthologfamily:1"
 
+# Generic, global type mappings. These can be reused in any index mappings below.
+global_mappings:
+  ws_object:
+    timestamp: {type: date}
+    obj_name: {type: keyword}
+    guid: {type: keyword}
+    creation_date: {type: date}
+    shared_users: {type: keyword}
+    access_group: {type: integer}
+    creator: {type: keyword}
+    version: {type: integer}
+    obj_id: {type: integer}
+    is_public: {type: boolean}
+    copied: {type: keyword}
+    tags: {type: keyword}
+    obj_type_version: {type: keyword}
+    obj_type_module: {type: keyword}
+    obj_type_name: {type: keyword}
+
 aliases:
   "narrative:1": narrative
   "reads:1": reads
@@ -48,109 +49,127 @@ aliases:
 mappings:
 
   "narrative:1":
-    narrative_title: {type: text}
-    data_objects:
-      type: nested
-      properties:
-        name: {type: keyword}
-        obj_type: {type: keyword}
-    cells:
-      type: object
-      properties:
-        desc: {type: text}
-        cell_type: {type: keyword}
-    total_cells: {type: short}
+    global_mappings: [ws_object]
+    properties:
+      narrative_title: {type: text}
+      data_objects:
+        type: nested
+        properties:
+          name: {type: keyword}
+          obj_type: {type: keyword}
+      cells:
+        type: object
+        properties:
+          desc: {type: text}
+          cell_type: {type: keyword}
+      total_cells: {type: short}
 
   "reads:1":
-    sequencing_tech: {type: keyword}
-    size: {type: integer}
-    interleaved: {type: boolean}
-    single_genome: {type: boolean}
-    provenance_services: {type: keyword}
-    phred_type: {type: text}
-    gc_content: {type: float}
-    mean_quality_score: {type: float}
-    mean_read_length: {type: float}
+    global_mappings: [ws_object]
+    properties:
+      sequencing_tech: {type: keyword}
+      size: {type: integer}
+      interleaved: {type: boolean}
+      single_genome: {type: boolean}
+      provenance_services: {type: keyword}
+      phred_type: {type: text}
+      gc_content: {type: float}
+      mean_quality_score: {type: float}
+      mean_read_length: {type: float}
 
   "assembly:1":
-    assembly_name: {type: keyword}
-    mean_contig_length: {type: float}
-    percent_complete_contigs: {type: float}
-    percent_circle_contigs: {type: float}
-    assembly_id: {type: keyword}
-    gc_content: {type: float}
-    size: {type: integer}
-    num_contigs: {type: integer}
-    taxon_ref: {type: keyword}
-    external_origination_date: {type: keyword}  # should maybe be of type date?
-    external_source_id: {type: keyword}
-    external_source: {type: keyword}
+    global_mappings: [ws_object]
+    properties:
+      assembly_name: {type: keyword}
+      mean_contig_length: {type: float}
+      percent_complete_contigs: {type: float}
+      percent_circle_contigs: {type: float}
+      assembly_id: {type: keyword}
+      gc_content: {type: float}
+      size: {type: integer}
+      num_contigs: {type: integer}
+      taxon_ref: {type: keyword}
+      external_origination_date: {type: keyword}  # should maybe be of type date?
+      external_source_id: {type: keyword}
+      external_source: {type: keyword}
 
   "genome:1":
-    genome_id: {type: keyword}
-    scientific_name: {type: keyword}
-    size: {type: integer}
-    num_contigs: {type: integer}
-    genome_type: {type: keyword}
-    gc_content: {type: float}
-    taxonomy: {type: keyword}
-    mean_contig_length: {type: float}
-    external_origination_date: {type: keyword}  # should maybe be of type date?
-    original_source_file_name: {type: keyword}
-    # new fields to include:
-    cds_count: {type: integer}
-    feature_count: {type: integer}
-    mrna_count: {type: integer}
-    non_coding_feature_count: {type: integer}
-    assembly_ref: {type: keyword}
-    source_id: {type: keyword}
-    feature_counts: {type: object}
-    source: {type: keyword}
-    warnings: {type: text}
+    global_mappings: [ws_object]
+    properties:
+      genome_id: {type: keyword}
+      scientific_name: {type: keyword}
+      size: {type: integer}
+      num_contigs: {type: integer}
+      genome_type: {type: keyword}
+      gc_content: {type: float}
+      taxonomy: {type: keyword}
+      mean_contig_length: {type: float}
+      external_origination_date: {type: keyword}  # should maybe be of type date?
+      original_source_file_name: {type: keyword}
+      # new fields to include:
+      cds_count: {type: integer}
+      feature_count: {type: integer}
+      mrna_count: {type: integer}
+      non_coding_feature_count: {type: integer}
+      assembly_ref: {type: keyword}
+      source_id: {type: keyword}
+      feature_counts: {type: object}
+      source: {type: keyword}
+      warnings: {type: text}
 
   "genome_features:1":
-    feature_type: {type: keyword}
-    functions: {type: keyword}
-    contig_ids: {type: keyword}
-    sequence_length: {type: integer}
-    id: {type: keyword}
-    # genome_upa: {type: keyword}
-    guid: {type: keyword}
-    genome_version: {type: integer}
-    # new fields to include:
-    assembly_ref: {type: keyword}
-    genome_feature_type: {type: keyword}
-    starts: {type: integer}
-    strands: {type: keyword}
-    stops: {type: integer}
-    aliases: {type: keyword}
+    global_mappings: []
+    properties:
+      feature_type: {type: keyword}
+      functions: {type: keyword}
+      contig_ids: {type: keyword}
+      sequence_length: {type: integer}
+      id: {type: keyword}
+      # genome_upa: {type: keyword}
+      guid: {type: keyword}
+      genome_version: {type: integer}
+      # new fields to include:
+      assembly_ref: {type: keyword}
+      genome_feature_type: {type: keyword}
+      starts: {type: integer}
+      strands: {type: keyword}
+      stops: {type: integer}
+      aliases: {type: keyword}
 
   "pangenome:1":
-    pangenome_id: {type: keyword}
-    pangenome_name: {type: keyword}
-    pangenome_type: {type: keyword}
-    genome_upas: {type: keyword}
+    global_mappings: [ws_object]
+    properties:
+      pangenome_id: {type: keyword}
+      pangenome_name: {type: keyword}
+      pangenome_type: {type: keyword}
+      genome_upas: {type: keyword}
 
   "pangenome_orthologfamily:1":
-    ortholog_id: {type: keyword}
-    ortholog_type: {type: keyword}
-    function: {type: keyword}
-    gene_ids: {type: keyword}
+    global_mappings: []
+    properties:
+      ortholog_id: {type: keyword}
+      ortholog_type: {type: keyword}
+      function: {type: keyword}
+      gene_ids: {type: keyword}
 
   "taxon:1":
-    scientific_name: {type: keyword}
-    scientific_lineage: {type: keyword}
-    domain: {type: keyword}
-    kingdom: {type: keyword}
-    parent_taxon_ref: {type: keyword}
-    genetic_code: {type: integer}
-    aliases: {type: keyword}
+    global_mappings: [ws_object]
+    properties:
+      scientific_name: {type: keyword}
+      scientific_lineage: {type: keyword}
+      domain: {type: keyword}
+      kingdom: {type: keyword}
+      parent_taxon_ref: {type: keyword}
+      genetic_code: {type: integer}
+      aliases: {type: keyword}
 
   "tree:1":
-    tree_name: {type: keyword}
-    type: {type: keyword}
-    labels:
-      type: nested
-      properties:
-        node_id: {type: text}
-        label: {type: text}
+    global_mappings: [ws_object]
+    properties:
+      tree_name: {type: keyword}
+      type: {type: keyword}
+      labels:
+        type: nested
+        properties:
+          node_id: {type: text}
+          label: {type: text}
