@@ -20,16 +20,17 @@ ws_subobjects:
 
 # Generic, global type mappings. These can be reused in any index mappings below.
 global_mappings:
+  ws_auth:
+    access_group: {type: integer}
+    is_public: {type: boolean}
   ws_object:
     timestamp: {type: date}
     obj_name: {type: keyword}
     creation_date: {type: date}
     shared_users: {type: keyword}
-    access_group: {type: integer}
     creator: {type: keyword}
     version: {type: integer}
     obj_id: {type: integer}
-    is_public: {type: boolean}
     copied: {type: keyword}
     tags: {type: keyword}
     obj_type_version: {type: keyword}
@@ -38,6 +39,19 @@ global_mappings:
   ws_subobject:
     parent_id: {type: keyword}
 
+# For each untyped index alias, what are the index names for the latest versions of each?
+latest_versions:
+  narrative: "narrative:1"
+  reads: "reads:1"
+  assembly: "assembly:1"
+  genome: "genome:1"
+  genome_features: "genome_features:2"
+  pangenome: "pangenome:1"
+  pangenome_orthologfamily: "pangenome_orthologfamily:1"
+  taxon: "taxon:1"
+  tree: "tree:1"
+
+# Aliases from any index to any name
 aliases:
   "narrative:1": narrative
   "reads:1": reads
@@ -53,7 +67,7 @@ aliases:
 mappings:
 
   "narrative:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       narrative_title: {type: text}
       data_objects:
@@ -69,7 +83,7 @@ mappings:
       total_cells: {type: short}
 
   "reads:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       sequencing_tech: {type: keyword}
       size: {type: integer}
@@ -82,7 +96,7 @@ mappings:
       mean_read_length: {type: float}
 
   "assembly:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       assembly_name: {type: keyword}
       mean_contig_length: {type: float}
@@ -98,7 +112,7 @@ mappings:
       external_source: {type: keyword}
 
   "genome:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       genome_id: {type: keyword}
       scientific_name: {type: keyword}
@@ -139,7 +153,7 @@ mappings:
       aliases: {type: keyword}
 
   "pangenome:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       pangenome_id: {type: keyword}
       pangenome_name: {type: keyword}
@@ -155,7 +169,7 @@ mappings:
       gene_ids: {type: keyword}
 
   "taxon:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       scientific_name: {type: keyword}
       scientific_lineage: {type: keyword}
@@ -166,7 +180,7 @@ mappings:
       aliases: {type: keyword}
 
   "tree:1":
-    global_mappings: [ws_object]
+    global_mappings: [ws_auth, ws_object]
     properties:
       tree_name: {type: keyword}
       type: {type: keyword}
