@@ -1,14 +1,15 @@
 
 # Mapping of KBase type names to index names
 ws_type_to_indexes:
-  Narrative: "narrative"
-  PairedEndLibrary: "reads"
-  SingleEndLibrary: "reads"
-  Assembly: "assembly"
-  Genome: "genome"
-  Pangenome: "pangenome"
-  Taxon: "taxon"
-  Tree: "tree"
+  Narrative: narrative
+  PairedEndLibrary: reads
+  SingleEndLibrary: reads
+  Assembly: assembly
+  Genome: genome
+  Pangenome: pangenome
+  Taxon: taxon
+  Tree: tree
+  GenomeFeature: genome_features
 
 es_type_global_name: data
 
@@ -35,7 +36,7 @@ global_mappings:
     obj_type_module: {type: keyword}
     obj_type_name: {type: keyword}
   ws_subobject:
-    parent_id: {type: string}
+    parent_id: {type: keyword}
 
 aliases:
   "narrative:1": narrative
@@ -120,14 +121,15 @@ mappings:
       source: {type: keyword}
       warnings: {type: text}
 
-  "genome_features:1":
-    global_mappings: []
+  "genome_features:2":
+    global_mappings: [ws_subobject]
     properties:
+      id: {type: keyword}
+      genome_scientific_name: {type: keyword}
       feature_type: {type: keyword}
       functions: {type: keyword}
       contig_ids: {type: keyword}
       sequence_length: {type: integer}
-      parent_id: {type: keyword}
       genome_version: {type: integer}
       assembly_ref: {type: keyword}
       genome_feature_type: {type: keyword}
@@ -145,9 +147,8 @@ mappings:
       genome_upas: {type: keyword}
 
   "pangenome_orthologfamily:1":
-    global_mappings: []
+    global_mappings: [ws_subobject]
     properties:
-      parent_id: {type: keyword}
       ortholog_id: {type: keyword}
       ortholog_type: {type: keyword}
       function: {type: keyword}
