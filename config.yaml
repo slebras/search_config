@@ -136,7 +136,7 @@ mappings:
       warnings: {type: text}
 
   "genome_features:2":
-    global_mappings: [ws_subobject]
+    global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
       genome_scientific_name: {type: keyword}
@@ -161,7 +161,7 @@ mappings:
       genome_upas: {type: keyword}
 
   "pangenome_orthologfamily:1":
-    global_mappings: [ws_subobject]
+    global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       ortholog_id: {type: keyword}
       ortholog_type: {type: keyword}
