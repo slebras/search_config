@@ -13,6 +13,13 @@ ws_type_to_indexes:
 
 es_type_global_name: data
 
+# SDK apps used for indexing, map from type_module.type_name -> {'sdk_func': _, 'sdk_app': _, 'sdk_version': _}
+sdk_indexer_apps:
+  KBaseGenomes.Genome:
+    sdk_app: example_app
+    sdk_func: example_func
+
+
 # Which indexes are considered "subobjects" (nested under workspace objects, such as genome features)
 ws_subobjects:
   - "genome_features:2"
