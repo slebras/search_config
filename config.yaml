@@ -62,6 +62,7 @@ aliases:
   "pangenome_orthologfamily:1": pangenome_orthologfamily
   "taxon:1": taxon
   "tree:1": tree
+  "indexing_errors:1": indexing_errors
 
 # All ES type mappings
 mappings:
@@ -189,3 +190,10 @@ mappings:
         properties:
           node_id: {type: text}
           label: {type: text}
+
+  "indexing_errors:1":
+    properties:
+      evtype: {type: keyword}
+      wsid: {type: integer}
+      objid: {type: integer}
+      error: {type: text}
