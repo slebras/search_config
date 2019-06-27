@@ -10,20 +10,47 @@ ws_type_to_indexes:
   Taxon: taxon
   Tree: tree
   GenomeFeature: genome_features
+  AttributeMapping: attribute_mapping
+  MetaboliteMatrix: matrix
+  DifferentialExpressionMatrix: matrix
+  ExpressionMatrix: matrix
+  FitnessMatrix: matrix
+  TraitMatrix: matrix
+  GenomeSet: genomeset
 
 es_type_global_name: data
 
 # SDK apps used for indexing, map from type_module.type_name -> {'sdk_func': _, 'sdk_app': _, 'sdk_version': _}
 sdk_indexer_apps:
-  KBaseGenomes.Genome:
-    sdk_app: example_app
-    sdk_func: example_func
-
+  KBaseMatrices.MetaboliteMatrix:
+    sdk_app: kbasematrices_indexer
+    sdk_func: run_kbasematrices_indexer
+    sub_obj_index: attribute_mapping
+  KBaseMatrices.DifferentialExpressionMatrix:
+    sdk_app: kbasematrices_indexer
+    sdk_func: run_kbasematrices_indexer
+    sub_obj_index: attribute_mapping
+  KBaseMatrices.ExpressionMatrix:
+    sdk_app: kbasematrices_indexer
+    sdk_func: run_kbasematrices_indexer
+    sub_obj_index: attribute_mapping
+  KBaseMatrices.FitnessMatrix:
+    sdk_app: kbasematrices_indexer
+    sdk_func: run_kbasematrices_indexer
+    sub_obj_index: attribute_mapping
+  KBaseMatrices.TraitMatrix:
+    sdk_app: kbasematrices_indexer
+    sdk_func: run_kbasematrices_indexer
+    sub_obj_index: attribute_mapping
+  KBaseSets.GenomeSet:
+    sdk_app: genomeset_indexer
+    sdk_func: run_genomeset_indexer
 
 # Which indexes are considered "subobjects" (nested under workspace objects, such as genome features)
 ws_subobjects:
   - "genome_features:2"
   - "pangenome_orthologfamily:1"
+  - "attribute_mapping:1"
 
 # Generic, global type mappings. These can be reused in any index mappings below.
 global_mappings:
@@ -57,6 +84,9 @@ latest_versions:
   pangenome_orthologfamily: "pangenome_orthologfamily:1"
   taxon: "taxon:1"
   tree: "tree:1"
+  matrix: "matrix:1"
+  attribute_mapping: "attribute_mapping:1"
+  genomeset: "genomeset:1"
 
 # Aliases from any index to any name
 aliases:
@@ -69,6 +99,9 @@ aliases:
   "pangenome_orthologfamily:1": pangenome_orthologfamily
   "taxon:1": taxon
   "tree:1": tree
+  "matrix:1": matrix
+  "attribute_mapping:1": attribute_mapping
+  "genomeset:1": genomeset
   "indexing_errors:1": indexing_errors
 
 # All ES type mappings
@@ -197,6 +230,45 @@ mappings:
         properties:
           node_id: {type: text}
           label: {type: text}
+
+  "attribute_mapping:1":
+    global_mappings: [ws_subobject, ws_auth, ws_object]
+    properties:
+      attributes: {type: keyword}
+      attribute_ontology_ids: {type: keyword}
+      attribute_units: {type: keyword}
+      attribute_unit_ontology_ids: {type: keyword}
+      attribute_values: {type: keyword}
+      attribute_value_ontology_ids: {type: keyword}
+      instances: {type: object}
+      num_attributes: {type: integer}
+      num_instances: {type: integer}
+
+  "matrix:1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      matrix_type: {type: keyword}
+      row_attributes: {type: keyword}
+      col_attributes: {type: keyword}
+      row_attribute_ontology_ids: {type: keyword}
+      col_attribute_ontology_ids: {type: keyword}
+      row_attribute_values: {type: keyword}
+      col_attribute_values: {type: keyword}
+      row_ids: {type: keyword}
+      col_ids: {type: keyword}
+      num_rows: {type: integer}
+      num_columns: {type: integer}
+      attributes: {type: keyword}
+
+  "genomeset:1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      genomes:
+        type: object
+        properties:
+          genome_ref: {type: keyword}
+          label: {type: keyword}
+      description: {type: text}
 
   "indexing_errors:1":
     properties:
