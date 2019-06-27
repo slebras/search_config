@@ -1,22 +1,24 @@
 
+# genome features index name
+genome_features_current_index_name: genome_features
+
 # Mapping of KBase type names to index names
 ws_type_to_indexes:
-  Narrative: narrative
-  PairedEndLibrary: reads
-  SingleEndLibrary: reads
-  Assembly: assembly
-  Genome: genome
-  Pangenome: pangenome
-  Taxon: taxon
-  Tree: tree
-  GenomeFeature: genome_features
-  AttributeMapping: attribute_mapping
-  MetaboliteMatrix: matrix
-  DifferentialExpressionMatrix: matrix
-  ExpressionMatrix: matrix
-  FitnessMatrix: matrix
-  TraitMatrix: matrix
-  GenomeSet: genomeset
+  KBaseNarrative.Narrative: narrative
+  KBaseFile.PairedEndLibrary: reads
+  KBaseFile.SingleEndLibrary: reads
+  KBaseGenomesAnnotations.Assembly: assembly
+  KBaseGenomes.Genome: genome
+  KbaseGenomes.Pangenome: pangenome
+  KBaseGenomeAnnotations.Taxon: taxon
+  KBaseTrees.Tree: tree
+  KBaseMatrices.AttributeMapping: attribute_mapping
+  KBaseMatrices.MetaboliteMatrix: matrix
+  KBaseMatrices.DifferentialExpressionMatrix: matrix
+  KBaseMatrices.ExpressionMatrix: matrix
+  KBaseMatrices.FitnessMatrix: matrix
+  KBaseMatrices.TraitMatrix: matrix
+  KBaseSets.GenomeSet: genomeset
 
 es_type_global_name: data
 
