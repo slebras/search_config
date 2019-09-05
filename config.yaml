@@ -19,6 +19,7 @@ ws_type_to_indexes:
   KBaseMatrices.FitnessMatrix: matrix
   KBaseMatrices.TraitMatrix: matrix
   KBaseSets.GenomeSet: genomeset
+  KBaseMetagenomes.AnnotatedMetagenomeAssembly: annotated_metagenome_assembly
 
 es_type_global_name: data
 
@@ -53,6 +54,7 @@ ws_subobjects:
   - "genome_features:2"
   - "pangenome_orthologfamily:1"
   - "attribute_mapping:1"
+  - "annotated_metagenome_assembly_features:1"
 
 # Generic, global type mappings. These can be reused in any index mappings below.
 global_mappings:
@@ -89,6 +91,9 @@ latest_versions:
   matrix: "matrix:1"
   attribute_mapping: "attribute_mapping:1"
   genomeset: "genomeset:1"
+  indexing_errors: "indexing_errors:1"
+  annotated_metagenome_assembly: "annotated_metagenome_assembly:1"
+  annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features:1"
 
 # Aliases from any index to any name
 aliases:
@@ -105,6 +110,8 @@ aliases:
   "attribute_mapping:1": attribute_mapping
   "genomeset:1": genomeset
   "indexing_errors:1": indexing_errors
+  "annotated_metagenome_assembly:1": annotated_metagenome_assembly
+  "annotated_metagenome_assembly_features:1": annotated_metagenome_assembly_features
 
 # All ES type mappings
 mappings:
@@ -271,6 +278,48 @@ mappings:
           genome_ref: {type: keyword}
           label: {type: keyword}
       description: {type: text}
+
+  "annotated_metagenome_assembly:1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      size: {type: integer}
+      source_id: {type: keyword}
+      source: {type: keyword}
+      gc_content: {type: float}
+      warnings: {type: keyword}
+      num_contigs: {type: integer}
+      mean_contig_length: {type: float}
+      external_source_origination_date: {type: keyword}
+      original_source_file_name: {type: keyword}
+      environment: {type: keyword}
+      num_features: {type: integer}
+      publication_authors: {type: keyword}
+      publication_titles: {type: keyword}
+      molecule_type: {type: keyword}
+      assembly_ref: {type: keyword}
+      notes: {type: text}
+
+  "annotated_metagenome_assembly_features:1":
+    global_mappings: [ws_subobject, ws_auth, ws_object]
+    properties:
+      id: {type: keyword}
+      type: {type: keyword}
+      size: {type: integer}
+      contig_ids: {type: keyword}
+      starts: {type: integer}
+      strands: {type: keyword}
+      stops: {type: integer}
+      functions: {type: keyword}
+      functional_descriptions: {type: keyword}
+      warnings: {type: keyword}
+      parent_gene: {type: keyword}
+      inference_data: {type: keyword}
+      dna_sequence: {type: text}
+      gc_content: {type: float}
+      annotated_metagenome_assembly_size: {type: integer}
+      annotated_metagenome_assembly_num_features: {type: integer}
+      annotated_metagenome_assembly_num_contigs: {type: integer}
+      annotated_metagenome_assembly_gc_content: {type: float}
 
   "indexing_errors:1":
     properties:
