@@ -1,4 +1,7 @@
 
+# default search alias
+default_search: default_search
+
 # genome features index name
 genome_features_current_index_name: genome_features
 
