@@ -102,28 +102,8 @@ latest_versions:
   annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version:1"
 
 
-# Aliases from any index to any name
-aliases:
-  "narrative:1": narrative
-  "reads:1": reads
-  "assembly:1": assembly
-  "genome:1": genome
-  "genome_features:2": genome_features
-  "pangenome:1": pangenome
-  "pangenome_orthologfamily:1": pangenome_orthologfamily
-  "taxon:1": taxon
-  "tree:1": tree
-  "matrix:1": matrix
-  "attribute_mapping:1": attribute_mapping
-  "genomeset:1": genomeset
-  "indexing_errors:1": indexing_errors
-  "annotated_metagenome_assembly:1": annotated_metagenome_assembly
-  "annotated_metagenome_assembly_features:1": annotated_metagenome_assembly_features
-  "annotated_metagenome_assembly_version:1": annotated_metagenome_assembly_version
-  "annotated_metagenome_assembly_features_version:1": annotated_metagenome_assembly_features_version
-
 # map from alias to contained indices
-group_aliases:
+aliases:
   default_search:
     - "narrative:1"
     - "reads:1"
@@ -139,6 +119,41 @@ group_aliases:
     - "indexing_errors:1"
     - "annotated_metagenome_assembly:1"
     - "annotated_metagenome_assembly_features:1"
+  narrative:
+    - "narrative:1"
+  reads:
+    - "reads:1"
+  assembly:
+    - "assembly:1"
+  genome:
+    - "genome:1"
+  genome_features:
+    - "genome_features:2"
+  pangenome:
+    - "pangenome:1"
+  pangenome_orthologfamily:
+    - "pangenome_orthologfamily:1"
+  taxon:
+    - "taxon:1"
+  tree:
+    - "tree:1"
+  matrix:
+    - "matrix:1"
+  attribute_mapping:
+    - "attribute_mapping:1"
+  genomeset:
+    - "genomeset:1"
+  indexing_errors:
+    - "indexing_errors:1"
+  annotated_metagenome_assembly:
+    - "annotated_metagenome_assembly:1"
+  annotated_metagenome_assembly_features:
+    - "annotated_metagenome_assembly_features:1"
+  annotated_metagenome_assembly_version:
+    - "annotated_metagenome_assembly_version:1"
+  annotated_metagenome_assembly_features_version:
+    - "annotated_metagenome_assembly_features_version:1"
+
 
 # All ES type mappings
 mappings:
