@@ -127,7 +127,6 @@ aliases:
     - "genome_features:2"
     - "pangenome_orthologfamily:1"
     - "annotated_metagenome_assembly_features:1"
-
   narrative:
     - "narrative:1"
   reads:
