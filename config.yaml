@@ -1,7 +1,3 @@
-
-# default search alias
-default_search_alias: default_search
-
 # genome features index name
 genome_features_current_index_name: genome_features
 
@@ -110,12 +106,10 @@ aliases:
     - "assembly:1"
     - "genome:1"
     - "pangenome:1"
-    - "pangenome_orthologfamily:1"
     - "taxon:1"
     - "tree:1"
     - "matrix:1"
     - "genomeset:1"
-    - "indexing_errors:1"
     - "annotated_metagenome_assembly:1"
   default_search_subobjects:
     - "narrative:1"
@@ -123,20 +117,17 @@ aliases:
     - "assembly:1"
     - "genome:1"
     - "pangenome:1"
-    - "pangenome_orthologfamily:1"
     - "taxon:1"
     - "tree:1"
     - "matrix:1"
-    - "attribute_mapping:1"
     - "genomeset:1"
-    - "indexing_errors:1"
     - "annotated_metagenome_assembly:1"
-    - "annotated_metagenome_assembly_features:1"
     # here are the subobjects
     - "attribute_mapping:1"
     - "genome_features:2"
     - "pangenome_orthologfamily:1"
     - "annotated_metagenome_assembly_features:1"
+
   narrative:
     - "narrative:1"
   reads:
