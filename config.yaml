@@ -50,11 +50,11 @@ sdk_indexer_apps:
 
 # Which indexes are considered "subobjects" (nested under workspace objects, such as genome features)
 ws_subobjects:
-  - "genome_features:2"
-  - "pangenome_orthologfamily:1"
-  - "attribute_mapping:1"
-  - "annotated_metagenome_assembly_features:1"
-  - "annotated_metagenome_assembly_features_version:1"
+  - "genome_features_2"
+  - "pangenome_orthologfamily_1"
+  - "attribute_mapping_1"
+  - "annotated_metagenome_assembly_features_1"
+  - "annotated_metagenome_assembly_features_version_1"
 
 # Generic, global type mappings. These can be reused in any index mappings below.
 global_mappings:
@@ -77,84 +77,84 @@ global_mappings:
   ws_subobject:
     parent_id: {type: keyword}
 
-# For each untyped index alias, what are the index names for the latest versions of each?
+# For each index alias, what are the versioned index names for the latest versions of each?
 latest_versions:
-  narrative: "narrative:1"
-  reads: "reads:1"
-  assembly: "assembly:1"
-  genome: "genome:1"
-  genome_features: "genome_features:2"
-  pangenome: "pangenome:1"
-  pangenome_orthologfamily: "pangenome_orthologfamily:1"
-  taxon: "taxon:1"
-  tree: "tree:1"
-  matrix: "matrix:1"
-  attribute_mapping: "attribute_mapping:1"
-  genomeset: "genomeset:1"
-  indexing_errors: "indexing_errors:1"
-  annotated_metagenome_assembly: "annotated_metagenome_assembly:1"
-  annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features:1"
-  annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version:1"
-  annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version:1"
+  narrative: "narrative_1"
+  reads: "reads_1"
+  assembly: "assembly_1"
+  genome: "genome_1"
+  genome_features: "genome_features_2"
+  pangenome: "pangenome_1"
+  pangenome_orthologfamily: "pangenome_orthologfamily_1"
+  taxon: "taxon_1"
+  tree: "tree_1"
+  matrix: "matrix_1"
+  attribute_mapping: "attribute_mapping_1"
+  genomeset: "genomeset_1"
+  indexing_errors: "indexing_errors_1"
+  annotated_metagenome_assembly: "annotated_metagenome_assembly_1"
+  annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features_1"
+  annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version_1"
+  annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_1"
 
 
 # map from alias to contained indices
 aliases:
   default_search:
-    - "narrative:1"
-    - "reads:1"
-    - "assembly:1"
-    - "genome:1"
-    - "pangenome:1"
-    - "pangenome_orthologfamily:1"
-    - "taxon:1"
-    - "tree:1"
-    - "matrix:1"
-    - "attribute_mapping:1"
-    - "genomeset:1"
-    - "indexing_errors:1"
-    - "annotated_metagenome_assembly:1"
-    - "annotated_metagenome_assembly_features:1"
+    - "narrative_1"
+    - "reads_1"
+    - "assembly_1"
+    - "genome_1"
+    - "pangenome_1"
+    - "pangenome_orthologfamily_1"
+    - "taxon_1"
+    - "tree_1"
+    - "matrix_1"
+    - "attribute_mapping_1"
+    - "genomeset_1"
+    - "indexing_errors_1"
+    - "annotated_metagenome_assembly_1"
+    - "annotated_metagenome_assembly_features_1"
   narrative:
-    - "narrative:1"
+    - "narrative_1"
   reads:
-    - "reads:1"
+    - "reads_1"
   assembly:
-    - "assembly:1"
+    - "assembly_1"
   genome:
-    - "genome:1"
+    - "genome_1"
   genome_features:
-    - "genome_features:2"
+    - "genome_features_2"
   pangenome:
-    - "pangenome:1"
+    - "pangenome_1"
   pangenome_orthologfamily:
-    - "pangenome_orthologfamily:1"
+    - "pangenome_orthologfamily_1"
   taxon:
-    - "taxon:1"
+    - "taxon_1"
   tree:
-    - "tree:1"
+    - "tree_1"
   matrix:
-    - "matrix:1"
+    - "matrix_1"
   attribute_mapping:
-    - "attribute_mapping:1"
+    - "attribute_mapping_1"
   genomeset:
-    - "genomeset:1"
+    - "genomeset_1"
   indexing_errors:
-    - "indexing_errors:1"
+    - "indexing_errors_1"
   annotated_metagenome_assembly:
-    - "annotated_metagenome_assembly:1"
+    - "annotated_metagenome_assembly_1"
   annotated_metagenome_assembly_features:
-    - "annotated_metagenome_assembly_features:1"
+    - "annotated_metagenome_assembly_features_1"
   annotated_metagenome_assembly_version:
-    - "annotated_metagenome_assembly_version:1"
+    - "annotated_metagenome_assembly_version_1"
   annotated_metagenome_assembly_features_version:
-    - "annotated_metagenome_assembly_features_version:1"
+    - "annotated_metagenome_assembly_features_version_1"
 
 
 # All ES type mappings
 mappings:
 
-  "narrative:1":
+  "narrative_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       narrative_title: {type: text}
@@ -170,7 +170,7 @@ mappings:
           cell_type: {type: keyword}
       total_cells: {type: short}
 
-  "reads:1":
+  "reads_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       sequencing_tech: {type: keyword}
@@ -183,7 +183,7 @@ mappings:
       mean_quality_score: {type: float}
       mean_read_length: {type: float}
 
-  "assembly:1":
+  "assembly_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       assembly_name: {type: keyword}
@@ -199,7 +199,7 @@ mappings:
       external_source_id: {type: keyword}
       external_source: {type: keyword}
 
-  "genome:1":
+  "genome_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       genome_id: {type: keyword}
@@ -223,7 +223,7 @@ mappings:
       source: {type: keyword}
       warnings: {type: text}
 
-  "genome_features:2":
+  "genome_features_2":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
@@ -240,7 +240,7 @@ mappings:
       stops: {type: integer}
       aliases: {type: keyword}
 
-  "pangenome:1":
+  "pangenome_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       pangenome_id: {type: keyword}
@@ -248,7 +248,7 @@ mappings:
       pangenome_type: {type: keyword}
       genome_upas: {type: keyword}
 
-  "pangenome_orthologfamily:1":
+  "pangenome_orthologfamily_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       ortholog_id: {type: keyword}
@@ -256,7 +256,7 @@ mappings:
       function: {type: keyword}
       gene_ids: {type: keyword}
 
-  "taxon:1":
+  "taxon_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       scientific_name: {type: keyword}
@@ -267,7 +267,7 @@ mappings:
       genetic_code: {type: integer}
       aliases: {type: keyword}
 
-  "tree:1":
+  "tree_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       tree_name: {type: keyword}
@@ -278,7 +278,7 @@ mappings:
           node_id: {type: text}
           label: {type: text}
 
-  "attribute_mapping:1":
+  "attribute_mapping_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       attributes: {type: keyword}
@@ -291,7 +291,7 @@ mappings:
       num_attributes: {type: integer}
       num_instances: {type: integer}
 
-  "matrix:1":
+  "matrix_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       matrix_type: {type: keyword}
@@ -307,7 +307,7 @@ mappings:
       num_columns: {type: integer}
       attributes: {type: keyword}
 
-  "genomeset:1":
+  "genomeset_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       genomes:
@@ -317,7 +317,7 @@ mappings:
           label: {type: keyword}
       description: {type: text}
 
-  "annotated_metagenome_assembly:1":
+  "annotated_metagenome_assembly_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       size: {type: integer}
@@ -337,7 +337,7 @@ mappings:
       assembly_ref: {type: keyword}
       notes: {type: text}
 
-  "annotated_metagenome_assembly_features:1":
+  "annotated_metagenome_assembly_features_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
@@ -359,7 +359,7 @@ mappings:
       annotated_metagenome_assembly_num_contigs: {type: integer}
       annotated_metagenome_assembly_gc_content: {type: float}
 
-  "annotated_metagenome_assembly_version:1":
+  "annotated_metagenome_assembly_version_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       size: {type: integer}
@@ -379,7 +379,7 @@ mappings:
       assembly_ref: {type: keyword}
       notes: {type: text}
 
-  "annotated_metagenome_assembly_features_version:1":
+  "annotated_metagenome_assembly_features_version_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
@@ -401,7 +401,7 @@ mappings:
       annotated_metagenome_assembly_num_contigs: {type: integer}
       annotated_metagenome_assembly_gc_content: {type: float}
 
-  "indexing_errors:1":
+  "indexing_errors_1":
     properties:
       evtype: {type: keyword}
       wsid: {type: integer}
