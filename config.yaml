@@ -229,7 +229,7 @@ mappings:
       genome_scientific_name: {type: keyword, copy_to: agg_fields}
       feature_type: {type: keyword, copy_to: agg_fields}
       functions: {type: keyword, copy_to: agg_fields}
-      contig_ids: {type: keyword}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       sequence_length: {type: integer}
       genome_version: {type: integer}
       assembly_ref: {type: keyword, copy_to: agg_fields}
@@ -342,7 +342,7 @@ mappings:
       id: {type: keyword}
       type: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
-      contig_ids: {type: keyword}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       starts: {type: integer}
       strands: {type: keyword}
       stops: {type: integer}
@@ -384,7 +384,7 @@ mappings:
       id: {type: keyword}
       type: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
-      contig_ids: {type: keyword}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       starts: {type: integer}
       strands: {type: keyword}
       stops: {type: integer}
