@@ -62,18 +62,19 @@ global_mappings:
     access_group: {type: integer}
     is_public: {type: boolean}
   ws_object:
+    agg_fields: {type: text}  # Uses the copy_to property for a combined text search
     timestamp: {type: date}
-    obj_name: {type: keyword}
+    obj_name: {type: keyword, copy_to: agg_fields}
     creation_date: {type: date}
     shared_users: {type: keyword}
-    creator: {type: keyword}
+    creator: {type: keyword, copy_to: agg_fields}
     version: {type: integer}
     obj_id: {type: integer}
     copied: {type: keyword}
-    tags: {type: keyword}
+    tags: {type: keyword, copy_to: agg_fields}
     obj_type_version: {type: keyword}
-    obj_type_module: {type: keyword}
-    obj_type_name: {type: keyword}
+    obj_type_module: {type: keyword, copy_to: agg_fields}
+    obj_type_name: {type: keyword, copy_to: agg_fields}
   ws_subobject:
     parent_id: {type: keyword}
 
@@ -89,7 +90,7 @@ latest_versions:
   taxon: "taxon_1"
   tree: "tree_1"
   matrix: "matrix_1"
-  attribute_mapping: "attribute_mapping_1"
+  attribute_mapping: "attribute_ma pping_1"
   genomeset: "genomeset_1"
   indexing_errors: "indexing_errors_1"
   annotated_metagenome_assembly: "annotated_metagenome_assembly_1"
@@ -97,8 +98,7 @@ latest_versions:
   annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version_1"
   annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_1"
 
-
-# map from alias to contained indices
+# Map from unversioned alias to versioned indexes
 aliases:
   default_search:
     - "narrative_1"
@@ -130,7 +130,7 @@ aliases:
   pangenome_orthologfamily:
     - "pangenome_orthologfamily_1"
   taxon:
-    - "taxon_1"
+    - "taxon_1" 
   tree:
     - "tree_1"
   matrix:
@@ -150,30 +150,29 @@ aliases:
   annotated_metagenome_assembly_features_version:
     - "annotated_metagenome_assembly_features_version_1"
 
-
 # All ES type mappings
 mappings:
 
   "narrative_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      narrative_title: {type: text}
+      narrative_title: {type: text, copy_to: agg_fields}
       data_objects:
         type: nested
         properties:
-          name: {type: keyword}
-          obj_type: {type: keyword}
+          name: {type: keyword, copy_to: agg_fields}
+          obj_type: {type: keyword, copy_to: agg_fields}
       cells:
         type: object
         properties:
-          desc: {type: text}
+          desc: {type: text, copy_to: agg_fields}
           cell_type: {type: keyword}
       total_cells: {type: short}
 
   "reads_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      sequencing_tech: {type: keyword}
+      sequencing_tech: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
       interleaved: {type: boolean}
       single_genome: {type: boolean}
@@ -186,7 +185,7 @@ mappings:
   "assembly_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      assembly_name: {type: keyword}
+      assembly_name: {type: keyword, copy_to: agg_fields}
       mean_contig_length: {type: float}
       percent_complete_contigs: {type: float}
       percent_circle_contigs: {type: float}
@@ -203,12 +202,12 @@ mappings:
     global_mappings: [ws_auth, ws_object]
     properties:
       genome_id: {type: keyword}
-      scientific_name: {type: keyword}
+      scientific_name: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
       num_contigs: {type: integer}
-      genome_type: {type: keyword}
+      genome_type: {type: keyword, copy_to: agg_fields}
       gc_content: {type: float}
-      taxonomy: {type: keyword}
+      taxonomy: {type: keyword, copy_to: agg_fields}
       mean_contig_length: {type: float}
       external_origination_date: {type: keyword}  # should maybe be of type date?
       original_source_file_name: {type: keyword}
@@ -217,72 +216,72 @@ mappings:
       feature_count: {type: integer}
       mrna_count: {type: integer}
       non_coding_feature_count: {type: integer}
-      assembly_ref: {type: keyword}
+      assembly_ref: {type: keyword, copy_to: agg_fields}
       source_id: {type: keyword}
       feature_counts: {type: object}
-      source: {type: keyword}
+      source: {type: keyword, copy_to: agg_fields}
       warnings: {type: text}
 
   "genome_features_2":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
-      genome_scientific_name: {type: keyword}
-      feature_type: {type: keyword}
-      functions: {type: keyword}
-      contig_ids: {type: keyword}
+      genome_scientific_name: {type: keyword, copy_to: agg_fields}
+      feature_type: {type: keyword, copy_to: agg_fields}
+      functions: {type: keyword, copy_to: agg_fields}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       sequence_length: {type: integer}
       genome_version: {type: integer}
-      assembly_ref: {type: keyword}
+      assembly_ref: {type: keyword, copy_to: agg_fields}
       genome_feature_type: {type: keyword}
       starts: {type: integer}
       strands: {type: keyword}
       stops: {type: integer}
-      aliases: {type: keyword}
+      aliases: {type: keyword, copy_to: agg_fields}
 
   "pangenome_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       pangenome_id: {type: keyword}
-      pangenome_name: {type: keyword}
-      pangenome_type: {type: keyword}
-      genome_upas: {type: keyword}
+      pangenome_name: {type: keyword, copy_to: agg_fields}
+      pangenome_type: {type: keyword, copy_to: agg_fields}
+      genome_upas: {type: keyword, copy_to: agg_fields}
 
   "pangenome_orthologfamily_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       ortholog_id: {type: keyword}
       ortholog_type: {type: keyword}
-      function: {type: keyword}
+      function: {type: keyword, copy_to: agg_fields}
       gene_ids: {type: keyword}
 
   "taxon_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      scientific_name: {type: keyword}
-      scientific_lineage: {type: keyword}
-      domain: {type: keyword}
-      kingdom: {type: keyword}
+      scientific_name: {type: keyword, copy_to: agg_fields}
+      scientific_lineage: {type: keyword, copy_to: agg_fields}
+      domain: {type: keyword, copy_to: agg_fields}
+      kingdom: {type: keyword, copy_to: agg_fields}
       parent_taxon_ref: {type: keyword}
       genetic_code: {type: integer}
-      aliases: {type: keyword}
+      aliases: {type: keyword, copy_to: agg_fields}
 
   "tree_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      tree_name: {type: keyword}
-      type: {type: keyword}
+      tree_name: {type: keyword, copy_to: agg_fields}
+      type: {type: keyword, copy_to: agg_fields}
       labels:
         type: nested
         properties:
           node_id: {type: text}
-          label: {type: text}
+          label: {type: text, copy_to: agg_fields}
 
   "attribute_mapping_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
-      attributes: {type: keyword}
-      attribute_ontology_ids: {type: keyword}
+      attributes: {type: keyword, copy_to: agg_fields}
+      attribute_ontology_ids: {type: keyword, copy_to: agg_fields}
       attribute_units: {type: keyword}
       attribute_unit_ontology_ids: {type: keyword}
       attribute_values: {type: keyword}
@@ -314,15 +313,15 @@ mappings:
         type: object
         properties:
           genome_ref: {type: keyword}
-          label: {type: keyword}
-      description: {type: text}
+          label: {type: keyword, copy_to: agg_fields}
+      description: {type: text, copy_to: agg_fields}
 
   "annotated_metagenome_assembly_1":
     global_mappings: [ws_auth, ws_object]
     properties:
       size: {type: integer}
       source_id: {type: keyword}
-      source: {type: keyword}
+      source: {type: keyword, copy_to: agg_fields}
       gc_content: {type: float}
       warnings: {type: keyword}
       num_contigs: {type: integer}
@@ -331,19 +330,19 @@ mappings:
       original_source_file_name: {type: keyword}
       environment: {type: keyword}
       num_features: {type: integer}
-      publication_authors: {type: keyword}
-      publication_titles: {type: keyword}
+      publication_authors: {type: keyword, copy_to: agg_fields}
+      publication_titles: {type: keyword, copy_to: agg_fields}
       molecule_type: {type: keyword}
       assembly_ref: {type: keyword}
-      notes: {type: text}
+      notes: {type: text, copy_to: agg_fields}
 
   "annotated_metagenome_assembly_features_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
-      type: {type: keyword}
+      type: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
-      contig_ids: {type: keyword}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       starts: {type: integer}
       strands: {type: keyword}
       stops: {type: integer}
@@ -364,7 +363,7 @@ mappings:
     properties:
       size: {type: integer}
       source_id: {type: keyword}
-      source: {type: keyword}
+      source: {type: keyword, copy_to: agg_fields}
       gc_content: {type: float}
       warnings: {type: keyword}
       num_contigs: {type: integer}
@@ -373,24 +372,24 @@ mappings:
       original_source_file_name: {type: keyword}
       environment: {type: keyword}
       num_features: {type: integer}
-      publication_authors: {type: keyword}
-      publication_titles: {type: keyword}
+      publication_authors: {type: keyword, copy_to: agg_fields}
+      publication_titles: {type: keyword, copy_to: agg_fields}
       molecule_type: {type: keyword}
       assembly_ref: {type: keyword}
-      notes: {type: text}
+      notes: {type: text, copy_to: agg_fields}
 
   "annotated_metagenome_assembly_features_version_1":
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
-      type: {type: keyword}
+      type: {type: keyword, copy_to: agg_fields}
       size: {type: integer}
-      contig_ids: {type: keyword}
+      contig_ids: {type: keyword, copy_to: agg_fields}
       starts: {type: integer}
       strands: {type: keyword}
       stops: {type: integer}
-      functions: {type: keyword}
-      functional_descriptions: {type: keyword}
+      functions: {type: keyword, copy_to: agg_fields}
+      functional_descriptions: {type: keyword, copy_to: agg_fields}
       warnings: {type: keyword}
       parent_gene: {type: keyword}
       inference_data: {type: keyword}
