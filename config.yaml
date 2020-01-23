@@ -36,9 +36,9 @@ sdk_indexer_apps:
     sdk_app: kbasematrices_indexer
     sdk_func: run_kbasematrices_indexer
     sub_obj_index: attribute_mapping
-  KBaseMatrices.FitnessMatrixjayrbolton-patch-1:
+  KBaseMatrices.FitnessMatrix:
     sdk_app: kbasematrices_indexer
-    sdk_func: run_kbjayrbolton-patch-1asematrices_indexer
+    sdk_func: run_kbasematrices_indexer
     sub_obj_index: attribute_mapping
   KBaseMatrices.TraitMatrix:
     sdk_app: kbasematrices_indexer
@@ -78,14 +78,14 @@ global_mappings:
   ws_subobject:
     parent_id: {type: keyword}
 
-# For each index alijayrbolton-patch-1as, what are the versioned index njayrbolton-patch-1ames for the latest versions of each?
+# For each index alias, what are the versioned index names for the latest versions of each?
 latest_versions:
   narrative: "narrative_1"
   reads: "reads_1"
   assembly: "assembly_1"
   genome: "genome_1"
   genome_features: "genome_features_2"
-  pangenome: "pangenome_1"jayrbolton-patch-1
+  pangenome: "pangenome_1"
   pangenome_orthologfamily: "pangenome_orthologfamily_1"
   taxon: "taxon_1"
   tree: "tree_1"
@@ -101,8 +101,8 @@ latest_versions:
 # Map from unversioned alias to versioned indexes
 aliases:
   default_search:
-    - "narrative_1"jayrbolton-patch-1
-    - "reads_1"jayrbolton-patch-1
+    - "narrative_1"
+    - "reads_1"
     - "assembly_1"
     - "genome_1"
     - "pangenome_1"
@@ -119,9 +119,9 @@ aliases:
     - "narrative_1"
   reads:
     - "reads_1"
-  assembly:jayrbolton-patch-1
+  assembly:
     - "assembly_1"
-  genome:jayrbolton-patch-1
+  genome:
     - "genome_1"
   genome_features:
     - "genome_features_2"
@@ -132,10 +132,10 @@ aliases:
   taxon:
     - "taxon_1" 
   tree:
-    - "tree_1"jayrbolton-patch-1
-  matrix:jayrbolton-patch-1
+    - "tree_1"
+  matrix:
     - "matrix_1"
-  attribute_mapping:jayrbolton-patch-1
+  attribute_mapping:
     - "attribute_mapping_1"
   genomeset:
     - "genomeset_1"
@@ -166,7 +166,7 @@ mappings:
         type: object
         properties:
           desc: {type: text, copy_to: agg_fields}
-          cell_type: {type: keyword}jayrbolton-patch-1
+          cell_type: {type: keyword}
       total_cells: {type: short}
 
   "reads_1":
@@ -180,7 +180,7 @@ mappings:
       phred_type: {type: text}
       gc_content: {type: float}
       mean_quality_score: {type: float}
-      mean_read_length: {type: float}jayrbolton-patch-1
+      mean_read_length: {type: float}
 
   "assembly_1":
     global_mappings: [ws_auth, ws_object]
