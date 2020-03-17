@@ -224,10 +224,6 @@ mappings:
       # TODO: multifield
       taxonomy:
         type: text
-        copy_to: agg_fields
-        fields:
-          raw:
-            type: keyword
       mean_contig_length: {type: float}
       external_origination_date: {type: keyword} # should maybe be of type date?
       original_source_file_name: {type: keyword}
@@ -250,7 +246,6 @@ mappings:
     global_mappings: [ws_subobject, ws_auth, ws_object]
     properties:
       id: {type: keyword}
-      # TODO: multifield
       genome_scientific_name:
         type: text
         copy_to: agg_fields
@@ -288,14 +283,12 @@ mappings:
   "taxon_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      # TODO: multifield
       scientific_name:
         type: text
         copy_to: agg_fields
         fields:
           raw:
             type: keyword
-      # TODO: multifield
       scientific_lineage: {type: text, copy_to: agg_fields}
       domain: {type: keyword, copy_to: agg_fields}
       kingdom: {type: keyword, copy_to: agg_fields}
