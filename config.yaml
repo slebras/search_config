@@ -210,7 +210,6 @@ mappings:
     global_mappings: [ws_auth, ws_object]
     properties:
       genome_id: {type: keyword}
-      # TODO: multifield
       scientific_name:
         type: text
         copy_to: agg_fields
@@ -221,9 +220,9 @@ mappings:
       num_contigs: {type: integer}
       genome_type: {type: keyword, copy_to: agg_fields}
       gc_content: {type: float}
-      # TODO: multifield
       taxonomy:
         type: text
+        copy_to: agg_fields
       mean_contig_length: {type: float}
       external_origination_date: {type: keyword} # should maybe be of type date?
       original_source_file_name: {type: keyword}
