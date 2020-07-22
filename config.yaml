@@ -660,6 +660,11 @@ mappings:
   "sample_1":
     global_mappings: [ws_auth, ws_object]
     properties:
+      save_date: {type: text}
+      sample_version: {type: integer}
+      name: {type: keyword}
+      parent_id: {type: keyword}
+      node_id: {type: keyword}
       sample_name: {type: text}
       material: {type: text}
       field_name_informal_classification: {type: text}
@@ -701,8 +706,6 @@ mappings:
       sub-object_type: {type: text}
       launch_id: {type: text}
       id: {type: text}
-      parent_id: {type: text}
-      name: {type: text}
       elevation_unit: {type: text}
       elevation_start: {type: text}
       latitude: {type: text}
