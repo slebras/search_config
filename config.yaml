@@ -101,6 +101,7 @@ latest_versions:
   annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_1"
   sample_set: "sample_set_1"
   sample_set_version: "sample_set_version_1"
+  sample: "sample_1"
 
 # Map from unversioned alias to versioned indexes
 aliases:
@@ -160,6 +161,8 @@ aliases:
     - "sample_set_1"
   sample_set_version:
     - "sample_set_version_1"
+  sample:
+    - "sample_1"
 
 # All ES type mappings
 mappings:
