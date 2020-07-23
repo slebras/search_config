@@ -19,6 +19,7 @@ ws_type_to_indexes:
   KBaseMatrices.TraitMatrix: matrix
   KBaseSets.GenomeSet: genomeset
   KBaseMetagenomes.AnnotatedMetagenomeAssembly: annotated_metagenome_assembly
+  KBaseSets.SampleSet: sample_set
 
 es_type_global_name: data
 
@@ -98,6 +99,9 @@ latest_versions:
   annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features_1"
   annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version_1"
   annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_1"
+  sample_set: "sample_set_1"
+  sample_set_version: "sample_set_version_1"
+  sample: "sample_1"
 
 # Map from unversioned alias to versioned indexes
 aliases:
@@ -153,6 +157,12 @@ aliases:
     - "annotated_metagenome_assembly_version_1"
   annotated_metagenome_assembly_features_version:
     - "annotated_metagenome_assembly_features_version_1"
+  sample_set:
+    - "sample_set_1"
+  sample_set_version:
+    - "sample_set_version_1"
+  sample:
+    - "sample_1"
 
 # All ES type mappings
 mappings:
@@ -633,3 +643,191 @@ mappings:
       objtype: {type: keyword}
       perm: {type: keyword}
       permusers: {type: keyword}
+
+  "sample_set_1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      description: {type: text}
+      sample_ids: {type: keyword}
+      sample_names: {type: keyword}
+      sample_versions: {type: integer}
+
+  "sample_set_version_1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      description: {type: text}
+      sample_ids: {type: keyword}
+      sample_names: {type: keyword}
+      sample_versions: {type: integer}
+
+  "sample_1":
+    global_mappings: [ws_auth, ws_object]
+    properties:
+      save_date: {type: text}
+      sample_version: {type: integer}
+      name: {type: keyword}
+      parent_id: {type: keyword}
+      node_id: {type: keyword}
+      sample_name: {type: text}
+      material: {type: text}
+      field_name_informal_classification: {type: text}
+      location_description: {type: text}
+      locality_description: {type: text}
+      collection_method: {type: text}
+      purpose: {type: text}
+      navigation_type: {type: text}
+      primary_physiographic_feature: {type: text}
+      name_of_physiographic_feature: {type: text}
+      field_program_cruise: {type: text}
+      collector_chief_scientist: {type: text}
+      collection_date_precision: {type: text}
+      current_archive: {type: text}
+      related_identifiers: {type: text}
+      platform_type: {type: text}
+      zone: {type: text}
+      state_province: {type: text}
+      original_archive_contact: {type: text}
+      classification: {type: text}
+      vertical_datum: {type: text}
+      original_archive: {type: text}
+      platform_name: {type: text}
+      collection_time_end: {type: text}
+      county: {type: text}
+      size_unit: {type: text}
+      age_unit: {type: text}
+      locality: {type: text}
+      sample_description: {type: text}
+      collection_method_description: {type: text}
+      other_names: {type: text}
+      geological_unit: {type: text}
+      collector_chief_scientist_address: {type: text}
+      size: {type: text}
+      launch_platform_name: {type: text}
+      depth_scale: {type: text}
+      country: {type: text}
+      city_township: {type: text}
+      sub-object_type: {type: text}
+      launch_id: {type: text}
+      id: {type: text}
+      elevation_unit: {type: text}
+      elevation_start: {type: text}
+      latitude: {type: text}
+      collection_date: {type: text}
+      str:degrees: {type: text}
+      longitude: {type: text}
+      age_min: {type: text}
+      age_max: {type: text}
+      geological_age: {type: text}
+      collection_date_precision: {type: text}
+      collection_date_end: {type: text}
+      elevation_end: {type: text}
+      depth_in_core_max: {type: text}
+      depth_in_core_min: {type: text}
+      coordinate_precision?: {type: float}
+      current_archive_contact: {type: keyword}
+      easting_m: {type: float}
+      elevation_unit: {type: float}
+      igsn: {type: }
+      latitude_end: {type: float}
+      longitude_end: {type: float}
+      northing_m: {type: float}
+      parent_igsn: {type: keyword}
+      relation_type: {type: text}
+      release_date: {type: keyword}
+      sampleid: {type: keyword}
+      experiment_name: {type: keyword}
+      area_name: {type: keyword}
+      well_name: {type: keyword}
+      environmental_package: {type: text}
+      description: {type: text}
+      date: {type: text}
+      time_zone: {type: text}
+      geological_zone: {type: text}
+      recovery_factor: {type: text}
+      method: {type: text}
+      fraction: {type: text}
+      replicate: {type: text}
+      maturation_time: {type: text}
+      treatment: {type: text}
+      temperature_celsius: {type: text}
+      moisture: {type: text}
+      pore_water_extraction_microliters: {type: text}
+      conductivity_ms_cm: {type: text}
+      dapi_cell_count_cells_g: {type: text}
+      dna_picogreen_total_ng: {type: text}
+      total_carbon_mg_g_dry_weight: {type: text}
+      biomass_carbon_mg_g: {type: text}
+      total_nitrogen_mg_g_dry_weight: {type: text}
+      leucine_activity_ngc_day_cell: {type: text}
+      functional_area: {type: text}
+      type_of_well: {type: text}
+      ground_elevation_ft_amsl: {type: text}
+      installation_method: {type: text}
+      boring_ft_bgs: {type: text}
+      boring_refusal: {type: text}
+      boring_diameter_in: {type: text}
+      screen_type: {type: text}
+      well_casing_type: {type: text}
+      well_casing_od_in: {type: text}
+      well_casing_id_in: {type: text}
+      drive_casing_type: {type: text}
+      drive_casing_id_in: {type: text}
+      drive_casing_od_in: {type: text}
+      drive_casing_start_depth_ft_bgs: {type: text}
+      drive_casing_end_depth_ft_bgs: {type: text}
+      packing_type: {type: text}
+      packing_depth_start_ft_bgs: {type: text}
+      packing_depth_end_ft_bgs: {type: text}
+      topofweatheredbedrock_ft_bgs: {type: text}
+      topoffreshbedrock_ft_bgs: {type: text}
+      aquifer: {type: text}
+      fractures_cavities_waterbreaks: {type: text}
+      other_name: {type: text}
+      screened: {type: text}
+      open: {type: text}
+      well_status: {type: text}
+      condition: {type: text}
+      origination_or_plug_abandon: {type: text}
+      min_water_level_ft_amsl: {type: text}
+      average_water_level_ft_amsl: {type: text}
+      max_water_level_ft_amsl: {type: text}
+      upper_seal_type: {type: text}
+      upper_seal_start_depth_ft_bgs: {type: text}
+      upper_seal_end_depth_ft_bgs: {type: text}
+      lower_seal_type_ft_bgs: {type: text}
+      lower_seal_start_depth_ft_bgs: {type: text}
+      lower_seal_end_depth_ft_bgs: {type: text}
+      open_casing_type: {type: text}
+      open_casing_od_in: {type: text}
+      open_casing_id_in: {type: text}
+      open_casing_depth_ft_bgs: {type: text}
+      open_hole_diameter_in: {type: text}
+      open_hole_depth_ft_bgs: {type: text}
+      open_interval_start_depth_ft_bgs: {type: text}
+      open_interval_end_depth_ft_bgs: {type: text}
+      open_interval_diameter_in: {type: text}
+      rock_formation: {type: text}
+      depth: {type: text}
+      elevation: {type: text}
+      time: {type: text}
+      timezone: {type: text}
+      env_package: {type: text}
+      continent: {type: text}
+      region: {type: text}
+      biome: {type: text}
+      feature: {type: text}
+      aodc_cells_g: {type: float}
+      boncat_activity_cell_g: {type: float}
+      depth_cm_bgs: {type: float}
+      filter_micron: {type: float}
+      organic_carbon_mg_g_dry_weight: {type: float}
+      ph: {type: float}
+      redox_potential_?: {type: float}
+      screen_bottom_elevation_ft_amsl: {type: float}
+      screen_end_depth_ft_bgs: {type: float}
+      screen_start_depth_ft_bgs: {type: float}
+      screen_top_elevation_ft_amsl: {type: float}
+      screened_interval_ft: {type: float}
+      top_of_casing_elevation_ft_amsl: {type: float}
+      top_of_casing_stickup_ft: {type: float}
+      well_casing_depth_ft_bgs: {type: float}
