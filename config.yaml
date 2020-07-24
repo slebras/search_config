@@ -727,7 +727,7 @@ mappings:
       current_archive_contact: {type: keyword}
       easting_m: {type: float}
       elevation_unit: {type: float}
-      igsn: {type: }
+      igsn: {type: keyword}
       latitude_end: {type: float}
       longitude_end: {type: float}
       northing_m: {type: float}
