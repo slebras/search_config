@@ -53,8 +53,8 @@ ws_subobjects:
   - "genome_features_2"
   - "pangenome_orthologfamily_1"
   - "attribute_mapping_1"
-  - "annotated_metagenome_assembly_features_1"
-  - "annotated_metagenome_assembly_features_version_1"
+  - "annotated_metagenome_assembly_features_2"
+  - "annotated_metagenome_assembly_features_version_2"
 
 # Generic, global type mappings. These can be reused in any index mappings below.
 global_mappings:
@@ -94,10 +94,10 @@ latest_versions:
   genomeset: "genomeset_1"
   indexing_errors: "indexing_errors_1"
   indexer_messages: "indexer_messages_1"
-  annotated_metagenome_assembly: "annotated_metagenome_assembly_1"
-  annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features_1"
-  annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version_1"
-  annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_1"
+  annotated_metagenome_assembly: "annotated_metagenome_assembly_2"
+  annotated_metagenome_assembly_features: "annotated_metagenome_assembly_features_2"
+  annotated_metagenome_assembly_version: "annotated_metagenome_assembly_version_2"
+  annotated_metagenome_assembly_features_version: "annotated_metagenome_assembly_features_version_2"
 
 # Map from unversioned alias to versioned indexes
 aliases:
@@ -115,8 +115,8 @@ aliases:
     - "genomeset_1"
     - "indexing_errors_1"
     - "indexer_messages_1"
-    - "annotated_metagenome_assembly_1"
-    - "annotated_metagenome_assembly_features_1"
+    - "annotated_metagenome_assembly_2"
+    - "annotated_metagenome_assembly_features_2"
   narrative:
     - "narrative_1"
   reads:
@@ -146,13 +146,13 @@ aliases:
   indexer_messages:
     - "indexer_messages_1"
   annotated_metagenome_assembly:
-    - "annotated_metagenome_assembly_1"
+    - "annotated_metagenome_assembly_2"
   annotated_metagenome_assembly_features:
-    - "annotated_metagenome_assembly_features_1"
+    - "annotated_metagenome_assembly_features_2"
   annotated_metagenome_assembly_version:
-    - "annotated_metagenome_assembly_version_1"
+    - "annotated_metagenome_assembly_version_2"
   annotated_metagenome_assembly_features_version:
-    - "annotated_metagenome_assembly_features_version_1"
+    - "annotated_metagenome_assembly_features_version_2"
 
 # All ES type mappings
 mappings:
