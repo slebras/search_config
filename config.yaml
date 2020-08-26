@@ -663,171 +663,173 @@ mappings:
   "sample_1":
     global_mappings: [ws_auth, ws_object]
     properties:
-      save_date: {type: text}
-      sample_version: {type: integer}
-      name: {type: keyword}
-      parent_id: {type: keyword}
-      node_id: {type: keyword}
-      sample_name: {type: text}
-      material: {type: text}
-      field_name_informal_classification: {type: text}
-      location_description: {type: text}
-      locality_description: {type: text}
-      collection_method: {type: text}
-      purpose: {type: text}
-      navigation_type: {type: text}
-      primary_physiographic_feature: {type: text}
-      name_of_physiographic_feature: {type: text}
-      field_program_cruise: {type: text}
-      collector_chief_scientist: {type: text}
-      collection_date_precision: {type: text}
-      current_archive: {type: text}
-      related_identifiers: {type: text}
-      platform_type: {type: text}
-      zone: {type: text}
-      state_province: {type: text}
-      original_archive_contact: {type: text}
-      classification: {type: text}
-      vertical_datum: {type: text}
-      original_archive: {type: text}
-      platform_name: {type: text}
-      collection_time_end: {type: text}
-      county: {type: text}
-      size_unit: {type: text}
-      age_unit: {type: text}
-      locality: {type: text}
-      sample_description: {type: text}
-      collection_method_description: {type: text}
-      other_names: {type: text}
-      geological_unit: {type: text}
-      collector_chief_scientist_address: {type: text}
-      size: {type: text}
-      launch_platform_name: {type: text}
-      depth_scale: {type: text}
-      country: {type: text}
-      city_township: {type: text}
-      sub-object_type: {type: text}
-      launch_id: {type: text}
-      id: {type: text}
-      elevation_unit: {type: text}
-      elevation_start: {type: text}
-      latitude: {type: text}
-      collection_date: {type: text}
-      str:degrees: {type: text}
-      longitude: {type: text}
-      age_min: {type: text}
-      age_max: {type: text}
-      geological_age: {type: text}
-      collection_date_precision: {type: text}
-      collection_date_end: {type: text}
-      elevation_end: {type: text}
-      depth_in_core_max: {type: text}
-      depth_in_core_min: {type: text}
-      coordinate_precision?: {type: float}
-      current_archive_contact: {type: keyword}
-      easting_m: {type: float}
-      elevation_unit: {type: float}
-      igsn: {type: keyword}
-      latitude_end: {type: float}
-      longitude_end: {type: float}
-      northing_m: {type: float}
-      parent_igsn: {type: keyword}
-      relation_type: {type: text}
-      release_date: {type: keyword}
-      sampleid: {type: keyword}
-      experiment_name: {type: keyword}
-      area_name: {type: keyword}
-      well_name: {type: keyword}
-      environmental_package: {type: text}
-      description: {type: text}
-      date: {type: text}
-      time_zone: {type: text}
-      geological_zone: {type: text}
-      recovery_factor: {type: text}
-      method: {type: text}
-      fraction: {type: text}
-      replicate: {type: text}
-      maturation_time: {type: text}
-      treatment: {type: text}
-      temperature_celsius: {type: text}
-      moisture: {type: text}
-      pore_water_extraction_microliters: {type: text}
-      conductivity_ms_cm: {type: text}
-      dapi_cell_count_cells_g: {type: text}
-      dna_picogreen_total_ng: {type: text}
-      total_carbon_mg_g_dry_weight: {type: text}
-      biomass_carbon_mg_g: {type: text}
-      total_nitrogen_mg_g_dry_weight: {type: text}
-      leucine_activity_ngc_day_cell: {type: text}
-      functional_area: {type: text}
-      type_of_well: {type: text}
-      ground_elevation_ft_amsl: {type: text}
-      installation_method: {type: text}
-      boring_ft_bgs: {type: text}
-      boring_refusal: {type: text}
-      boring_diameter_in: {type: text}
-      screen_type: {type: text}
-      well_casing_type: {type: text}
-      well_casing_od_in: {type: text}
-      well_casing_id_in: {type: text}
-      drive_casing_type: {type: text}
-      drive_casing_id_in: {type: text}
-      drive_casing_od_in: {type: text}
-      drive_casing_start_depth_ft_bgs: {type: text}
-      drive_casing_end_depth_ft_bgs: {type: text}
-      packing_type: {type: text}
-      packing_depth_start_ft_bgs: {type: text}
-      packing_depth_end_ft_bgs: {type: text}
-      topofweatheredbedrock_ft_bgs: {type: text}
-      topoffreshbedrock_ft_bgs: {type: text}
-      aquifer: {type: text}
-      fractures_cavities_waterbreaks: {type: text}
-      other_name: {type: text}
-      screened: {type: text}
-      open: {type: text}
-      well_status: {type: text}
-      condition: {type: text}
-      origination_or_plug_abandon: {type: text}
-      min_water_level_ft_amsl: {type: text}
-      average_water_level_ft_amsl: {type: text}
-      max_water_level_ft_amsl: {type: text}
-      upper_seal_type: {type: text}
-      upper_seal_start_depth_ft_bgs: {type: text}
-      upper_seal_end_depth_ft_bgs: {type: text}
-      lower_seal_type_ft_bgs: {type: text}
-      lower_seal_start_depth_ft_bgs: {type: text}
-      lower_seal_end_depth_ft_bgs: {type: text}
-      open_casing_type: {type: text}
-      open_casing_od_in: {type: text}
-      open_casing_id_in: {type: text}
-      open_casing_depth_ft_bgs: {type: text}
-      open_hole_diameter_in: {type: text}
-      open_hole_depth_ft_bgs: {type: text}
-      open_interval_start_depth_ft_bgs: {type: text}
-      open_interval_end_depth_ft_bgs: {type: text}
-      open_interval_diameter_in: {type: text}
-      rock_formation: {type: text}
-      depth: {type: text}
-      elevation: {type: text}
-      time: {type: text}
-      timezone: {type: text}
-      env_package: {type: text}
-      continent: {type: text}
-      region: {type: text}
-      biome: {type: text}
-      feature: {type: text}
-      aodc_cells_g: {type: float}
-      boncat_activity_cell_g: {type: float}
-      depth_cm_bgs: {type: float}
-      filter_micron: {type: float}
-      organic_carbon_mg_g_dry_weight: {type: float}
-      ph: {type: float}
-      redox_potential_?: {type: float}
-      screen_bottom_elevation_ft_amsl: {type: float}
-      screen_end_depth_ft_bgs: {type: float}
-      screen_start_depth_ft_bgs: {type: float}
-      screen_top_elevation_ft_amsl: {type: float}
-      screened_interval_ft: {type: float}
-      top_of_casing_elevation_ft_amsl: {type: float}
-      top_of_casing_stickup_ft: {type: float}
-      well_casing_depth_ft_bgs: {type: float}
+      all_sample_metadata_field: {type: text}
+      save_date: {type: text, copy_to: all_sample_metadata_field}
+      sample_version: {type: integer, copy_to: all_sample_metadata_field}
+      name: {type: keyword, copy_to: all_sample_metadata_field}
+      parent_id: {type: keyword, copy_to: all_sample_metadata_field}
+      node_id: {type: keyword, copy_to: all_sample_metadata_field}
+      sample_name: {type: text, copy_to: all_sample_metadata_field}
+      material: {type: text, copy_to: all_sample_metadata_field}
+      field_name_informal_classification: {type: text, copy_to: all_sample_metadata_field}
+      location_description: {type: text, copy_to: all_sample_metadata_field}
+      locality_description: {type: text, copy_to: all_sample_metadata_field}
+      collection_method: {type: text, copy_to: all_sample_metadata_field}
+      purpose: {type: text, copy_to: all_sample_metadata_field}
+      navigation_type: {type: text, copy_to: all_sample_metadata_field}
+      primary_physiographic_feature: {type: text, copy_to: all_sample_metadata_field}
+      name_of_physiographic_feature: {type: text, copy_to: all_sample_metadata_field}
+      field_program_cruise: {type: text, copy_to: all_sample_metadata_field}
+      collector_chief_scientist: {type: text, copy_to: all_sample_metadata_field}
+      collection_date_precision: {type: text, copy_to: all_sample_metadata_field}
+      current_archive: {type: text, copy_to: all_sample_metadata_field}
+      related_identifiers: {type: text, copy_to: all_sample_metadata_field}
+      platform_type: {type: text, copy_to: all_sample_metadata_field}
+      zone: {type: text, copy_to: all_sample_metadata_field}
+      state_province: {type: text, copy_to: all_sample_metadata_field}
+      original_archive_contact: {type: text, copy_to: all_sample_metadata_field}
+      classification: {type: text, copy_to: all_sample_metadata_field}
+      vertical_datum: {type: text, copy_to: all_sample_metadata_field}
+      original_archive: {type: text, copy_to: all_sample_metadata_field}
+      platform_name: {type: text, copy_to: all_sample_metadata_field}
+      collection_time_end: {type: text, copy_to: all_sample_metadata_field}
+      county: {type: text, copy_to: all_sample_metadata_field}
+      size_unit: {type: text, copy_to: all_sample_metadata_field}
+      age_unit: {type: text, copy_to: all_sample_metadata_field}
+      locality: {type: text, copy_to: all_sample_metadata_field}
+      sample_description: {type: text, copy_to: all_sample_metadata_field}
+      collection_method_description: {type: text, copy_to: all_sample_metadata_field}
+      other_names: {type: text, copy_to: all_sample_metadata_field}
+      geological_unit: {type: text, copy_to: all_sample_metadata_field}
+      collector_chief_scientist_address: {type: text, copy_to: all_sample_metadata_field}
+      size: {type: text, copy_to: all_sample_metadata_field}
+      launch_platform_name: {type: text, copy_to: all_sample_metadata_field}
+      depth_scale: {type: text, copy_to: all_sample_metadata_field}
+      country: {type: text, copy_to: all_sample_metadata_field}
+      city_township: {type: text, copy_to: all_sample_metadata_field}
+      sub-object_type: {type: text, copy_to: all_sample_metadata_field}
+      launch_id: {type: text, copy_to: all_sample_metadata_field}
+      id: {type: text, copy_to: all_sample_metadata_field}
+      elevation_unit: {type: text, copy_to: all_sample_metadata_field}
+      elevation_start: {type: text, copy_to: all_sample_metadata_field}
+      latitude: {type: text, copy_to: all_sample_metadata_field}
+      collection_date: {type: text, copy_to: all_sample_metadata_field}
+      longitude: {type: text, copy_to: all_sample_metadata_field}
+      age_min: {type: text, copy_to: all_sample_metadata_field}
+      age_max: {type: text, copy_to: all_sample_metadata_field}
+      geological_age: {type: text, copy_to: all_sample_metadata_field}
+      collection_date_precision: {type: text, copy_to: all_sample_metadata_field}
+      collection_date_end: {type: text, copy_to: all_sample_metadata_field}
+      elevation_end: {type: text, copy_to: all_sample_metadata_field}
+      depth_in_core_max: {type: text, copy_to: all_sample_metadata_field}
+      depth_in_core_min: {type: text, copy_to: all_sample_metadata_field}
+      coordinate_precision?: {type: float, copy_to: all_sample_metadata_field}
+      coordinate_precision: {type: float, copy_to: all_sample_metadata_field}
+      current_archive_contact: {type: keyword, copy_to: all_sample_metadata_field}
+      easting_m: {type: float, copy_to: all_sample_metadata_field}
+      elevation_unit: {type: float, copy_to: all_sample_metadata_field}
+      igsn: {type: keyword, copy_to: all_sample_metadata_field}
+      latitude_end: {type: float, copy_to: all_sample_metadata_field}
+      longitude_end: {type: float, copy_to: all_sample_metadata_field}
+      northing_m: {type: float, copy_to: all_sample_metadata_field}
+      parent_igsn: {type: keyword, copy_to: all_sample_metadata_field}
+      relation_type: {type: text, copy_to: all_sample_metadata_field}
+      release_date: {type: keyword, copy_to: all_sample_metadata_field}
+      sampleid: {type: keyword, copy_to: all_sample_metadata_field}
+      experiment_name: {type: keyword, copy_to: all_sample_metadata_field}
+      area_name: {type: keyword, copy_to: all_sample_metadata_field}
+      well_name: {type: keyword, copy_to: all_sample_metadata_field}
+      environmental_package: {type: text, copy_to: all_sample_metadata_field}
+      description: {type: text, copy_to: all_sample_metadata_field}
+      date: {type: text, copy_to: all_sample_metadata_field}
+      time_zone: {type: text, copy_to: all_sample_metadata_field}
+      geological_zone: {type: text, copy_to: all_sample_metadata_field}
+      recovery_factor: {type: text, copy_to: all_sample_metadata_field}
+      method: {type: text, copy_to: all_sample_metadata_field}
+      fraction: {type: text, copy_to: all_sample_metadata_field}
+      replicate: {type: text, copy_to: all_sample_metadata_field}
+      maturation_time: {type: text, copy_to: all_sample_metadata_field}
+      treatment: {type: text, copy_to: all_sample_metadata_field}
+      temperature_celsius: {type: text, copy_to: all_sample_metadata_field}
+      moisture: {type: text, copy_to: all_sample_metadata_field}
+      pore_water_extraction_microliters: {type: text, copy_to: all_sample_metadata_field}
+      conductivity_ms_cm: {type: text, copy_to: all_sample_metadata_field}
+      dapi_cell_count_cells_g: {type: text, copy_to: all_sample_metadata_field}
+      dna_picogreen_total_ng: {type: text, copy_to: all_sample_metadata_field}
+      total_carbon_mg_g_dry_weight: {type: text, copy_to: all_sample_metadata_field}
+      biomass_carbon_mg_g: {type: text, copy_to: all_sample_metadata_field}
+      total_nitrogen_mg_g_dry_weight: {type: text, copy_to: all_sample_metadata_field}
+      leucine_activity_ngc_day_cell: {type: text, copy_to: all_sample_metadata_field}
+      functional_area: {type: text, copy_to: all_sample_metadata_field}
+      type_of_well: {type: text, copy_to: all_sample_metadata_field}
+      ground_elevation_ft_amsl: {type: text, copy_to: all_sample_metadata_field}
+      installation_method: {type: text, copy_to: all_sample_metadata_field}
+      boring_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      boring_refusal: {type: text, copy_to: all_sample_metadata_field}
+      boring_diameter_in: {type: text, copy_to: all_sample_metadata_field}
+      screen_type: {type: text, copy_to: all_sample_metadata_field}
+      well_casing_type: {type: text, copy_to: all_sample_metadata_field}
+      well_casing_od_in: {type: text, copy_to: all_sample_metadata_field}
+      well_casing_id_in: {type: text, copy_to: all_sample_metadata_field}
+      drive_casing_type: {type: text, copy_to: all_sample_metadata_field}
+      drive_casing_id_in: {type: text, copy_to: all_sample_metadata_field}
+      drive_casing_od_in: {type: text, copy_to: all_sample_metadata_field}
+      drive_casing_start_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      drive_casing_end_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      packing_type: {type: text, copy_to: all_sample_metadata_field}
+      packing_depth_start_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      packing_depth_end_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      topofweatheredbedrock_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      topoffreshbedrock_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      aquifer: {type: text, copy_to: all_sample_metadata_field}
+      fractures_cavities_waterbreaks: {type: text, copy_to: all_sample_metadata_field}
+      other_name: {type: text, copy_to: all_sample_metadata_field}
+      screened: {type: text, copy_to: all_sample_metadata_field}
+      open: {type: text, copy_to: all_sample_metadata_field}
+      well_status: {type: text, copy_to: all_sample_metadata_field}
+      condition: {type: text, copy_to: all_sample_metadata_field}
+      origination_or_plug_abandon: {type: text, copy_to: all_sample_metadata_field}
+      min_water_level_ft_amsl: {type: text, copy_to: all_sample_metadata_field}
+      average_water_level_ft_amsl: {type: text, copy_to: all_sample_metadata_field}
+      max_water_level_ft_amsl: {type: text, copy_to: all_sample_metadata_field}
+      upper_seal_type: {type: text, copy_to: all_sample_metadata_field}
+      upper_seal_start_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      upper_seal_end_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      lower_seal_type_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      lower_seal_start_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      lower_seal_end_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      open_casing_type: {type: text, copy_to: all_sample_metadata_field}
+      open_casing_od_in: {type: text, copy_to: all_sample_metadata_field}
+      open_casing_id_in: {type: text, copy_to: all_sample_metadata_field}
+      open_casing_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      open_hole_diameter_in: {type: text, copy_to: all_sample_metadata_field}
+      open_hole_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      open_interval_start_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      open_interval_end_depth_ft_bgs: {type: text, copy_to: all_sample_metadata_field}
+      open_interval_diameter_in: {type: text, copy_to: all_sample_metadata_field}
+      rock_formation: {type: text, copy_to: all_sample_metadata_field}
+      depth: {type: text, copy_to: all_sample_metadata_field}
+      elevation: {type: text, copy_to: all_sample_metadata_field}
+      time: {type: text, copy_to: all_sample_metadata_field}
+      timezone: {type: text, copy_to: all_sample_metadata_field}
+      env_package: {type: text, copy_to: all_sample_metadata_field}
+      continent: {type: text, copy_to: all_sample_metadata_field}
+      region: {type: text, copy_to: all_sample_metadata_field}
+      biome: {type: text, copy_to: all_sample_metadata_field}
+      feature: {type: text, copy_to: all_sample_metadata_field}
+      aodc_cells_g: {type: float, copy_to: all_sample_metadata_field}
+      boncat_activity_cell_g: {type: float, copy_to: all_sample_metadata_field}
+      depth_cm_bgs: {type: float, copy_to: all_sample_metadata_field}
+      filter_micron: {type: float, copy_to: all_sample_metadata_field}
+      organic_carbon_mg_g_dry_weight: {type: float, copy_to: all_sample_metadata_field}
+      ph: {type: float, copy_to: all_sample_metadata_field}
+      redox_potential_?: {type: float, copy_to: all_sample_metadata_field}
+      redox_potential: {type: float, copy_to: all_sample_metadata_field}
+      screen_bottom_elevation_ft_amsl: {type: float, copy_to: all_sample_metadata_field}
+      screen_end_depth_ft_bgs: {type: float, copy_to: all_sample_metadata_field}
+      screen_start_depth_ft_bgs: {type: float, copy_to: all_sample_metadata_field}
+      screen_top_elevation_ft_amsl: {type: float, copy_to: all_sample_metadata_field}
+      screened_interval_ft: {type: float, copy_to: all_sample_metadata_field}
+      top_of_casing_elevation_ft_amsl: {type: float, copy_to: all_sample_metadata_field}
+      top_of_casing_stickup_ft: {type: float, copy_to: all_sample_metadata_field}
+      well_casing_depth_ft_bgs: {type: float, copy_to: all_sample_metadata_field}
